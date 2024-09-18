@@ -1,0 +1,1362 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>HomePage</title>
+	<meta charset="UTF-8">
+	<meta name="format-detection" content="telephone=no">
+	<style>
+		body {
+			opacity: 1;
+		}
+	</style>
+	<link rel="stylesheet" href="css/style.min.css?_v=20240919013244">
+	<link rel="shortcut icon" href="favicon.ico">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/intl-tel-input@24.4.0/build/css/intlTelInput.css?_v=20240919013244">
+	<!-- <meta name="robots" content="noindex, nofollow"> -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+	<div id="progressBar"></div>
+	<div class="wrapper">
+		<div id="popup-lawyer" aria-hidden="true" class="popup">
+			<div class="popup__wrapper">
+				<div class="popup__content popup__content--max ">
+					<button data-close type="button" class="popup__close"><img src="img/popup/cance.svg" alt=""></button>
+					<div class="popup__body popup__body-policy">
+						<h2 class="popup__title popup__title-policy">Юридическая информация</h2>
+						<div class="popup__text-policy">
+							<p>Юр.Адрес: Ленинградская обл. Всеволожский район г. Кудрово ул. Ленинградская 7</p>
+							<p>Фактический Адрес: Кудрово, Пражская 17А Рынок «Кубометр»
+								Главный офис «Rehau Service»</p>
+							<p>Наименование: ИП Смирнов Дмитрий Александрович</p>
+							<p>ИНН: 761020687655 ОГРНИП: 319470400082818</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div id="popup" aria-hidden="true" class="popup">
+			<div class="popup__wrapper">
+				<div class="popup__content">
+					<button data-close type="button" class="popup__close"><img src="img/popup/cance.svg" alt=""></button>
+					<div class="popup__body">
+						<h2 class="popup__title">Заявка на консультацию</h2>
+						<div class="popup__subtitle">Оставьте заявку на бесплатную консультацию и в течении 10 минут с Вами свяжется
+							наш специалист и ответит на все интересующие вопросы</div>
+						<form data-ajax class="popup__form" action="files/sendmail/sendmail.php" method="POST">
+							<input data-required type="text" name="form[name]" data-error="Заполните поле имя" placeholder="Ваше имя" class="popup__input  input">
+							<input data-required type="text" name="form[phone]" data-error="Введите телефон" placeholder="Введите номер телефона" class="popup__input  input">
+							<button type="submit" class="popup__button   button">Получить консультацию</button>
+							<div class="popup__button__checkbox  body-form__checkbox checkbox">
+								<input data-required id="c_1" data-error="Ознакомьтесь с условия передачи информации" class="popup__checkbox-input body-form__checkbox-input  checkbox__input" type="checkbox" value="1" name="form[checkbox]">
+								<label for="c_1" class="popup__checkbox-label body-form__checkbox-label checkbox__label"><span class="popup__checkbox-text   checkbox__text">Я принимаю <a class="popup__checkbox-link" data-popup="#popup-policy" href="#">условия передачи информации</a></span></label>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div id="popup-two" aria-hidden="true" class="popup">
+			<div class="popup__wrapper">
+				<div class="popup__content">
+					<button data-close type="button" class="popup__close"><img src="img/popup/cance.svg" alt=""></button>
+					<div class="popup__body">
+						<h2 class="popup__title">Оставьте заявку</h2>
+						<div class="popup__subtitle">Заполните форму ниже и в течении 10 минут с Вами свяжется наш специалист, чтобы
+							задать уточняющие вопросы</div>
+						<form class="popup__form" action="files/sendmail/sendmail.php" method="POST">
+							<input data-required type="text" name="form[name]" data-error="Error" placeholder="Ваше имя" class="popup__input  input">
+							<input data-required type="text" name="form[phone]" data-error="Error" placeholder="Введите номер телефона" class="popup__input  input">
+							<button type="submit" class="popup__button   button">Оставить заявку</button>
+							<div class="popup__button__checkbox  body-form__checkbox checkbox">
+								<input id="c_5" data-error="Ошибка" class="popup__checkbox-input body-form__checkbox-input  checkbox__input" type="checkbox" value="1" name="form[checkbox]">
+								<label for="c_5" class="popup__checkbox-label body-form__checkbox-label checkbox__label"><span class="popup__checkbox-text   checkbox__text">Я принимаю <a class="popup__checkbox-link" data-popup="#popup-policy" href="#">условия передачи информации</a></span></label>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div id="popup-action" aria-hidden="true" class="popup">
+			<div class="popup__wrapper">
+				<div class="popup__content">
+					<button data-close type="button" class="popup__close"><img src="img/popup/cance.svg" alt=""></button>
+					<div class="popup__body">
+						<h2 class="popup__title">Получите скидку 5%</h2>
+						<div class="popup__subtitle">Заполните форму ниже и в течении 10 минут с Вами свяжется наш специалист, чтобы
+							задать уточняющие вопросы</div>
+						<form class="popup__form" action="files/sendmail/sendmail.php" method="POST">
+							<input data-required type="text" name="form[name]" data-error="Error" placeholder="Ваше имя" class="popup__input  input">
+							<input data-required type="text" name="form[phone]" data-error="Error" placeholder="Введите номер телефона" class="popup__input  input">
+							<button type="submit" class="popup__button   button">Получить скидку</button>
+							<div class="popup__button__checkbox  body-form__checkbox checkbox">
+								<input id="c_6" data-error="Ошибка" class="popup__checkbox-input body-form__checkbox-input  checkbox__input" type="checkbox" value="1" name="form[checkbox]">
+								<label for="c_6" class="popup__checkbox-label body-form__checkbox-label checkbox__label"><span class="popup__checkbox-text   checkbox__text">Я принимаю <a class="popup__checkbox-link" data-popup="#popup-policy" href="#">условия передачи информации</a></span></label>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div id="popup-action-two" aria-hidden="true" class="popup">
+			<div class="popup__wrapper">
+				<div class="popup__content">
+					<button data-close type="button" class="popup__close"><img src="img/popup/cance.svg" alt=""></button>
+					<div class="popup__body">
+						<h2 class="popup__title">Получите скидку 10%</h2>
+						<div class="popup__subtitle">Заполните форму ниже и в течении 10 минут с Вами свяжется наш специалист, чтобы
+							задать уточняющие вопросы</div>
+						<form class="popup__form" action="files/sendmail/sendmail.php" method="POST">
+							<input data-required type="text" name="form[name]" data-error="Error" placeholder="Ваше имя" class="popup__input  input">
+							<input data-required type="text" name="form[phone]" data-error="Error" placeholder="Введите номер телефона" class="popup__input  input">
+							<button type="submit" class="popup__button   button">Получить скидку</button>
+							<div class="popup__button__checkbox  body-form__checkbox checkbox">
+								<input id="c_8" data-error="Ошибка" class="popup__checkbox-input body-form__checkbox-input  checkbox__input" type="checkbox" value="1" name="form[checkbox]">
+								<label for="c_8" class="popup__checkbox-label body-form__checkbox-label checkbox__label"><span class="popup__checkbox-text   checkbox__text">Я принимаю <a class="popup__checkbox-link" data-popup="#popup-policy" href="#">условия передачи информации</a></span></label>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div id="popup-policy" aria-hidden="true" class="popup">
+			<div class="popup__wrapper">
+				<div class="popup__content popup__content--max ">
+					<button data-close type="button" class="popup__close"><img src="img/popup/cance.svg" alt=""></button>
+					<div class="popup__body popup__body-policy">
+						<h2 class="popup__title popup__title-policy">Политика конфиденциальности</h2>
+						<div class="popup__text-policy">
+							<p>Администрация данного Сайта не может передать или раскрыть информацию, предоставленную пользователем (далее Пользователь) при регистрации и использовании функций сайта, третьим лицам, кроме случаев, описанных законодательством страны, на территории которой Пользователь ведет свою деятельность. </p>
+
+							<p>Для регистрации на сайте Пользователь обязан внести персональную информацию. Для проверки предоставленных данных сайт оставляет за собой право потребовать доказательства идентичности в онлайн- или офлайн-режимах.</p>
+
+							<p>Сайт использует личную информацию Пользователя для обслуживания и для улучшения качества предоставляемых услуг. Часть персональной информации может быть предоставлена банку или платежной системе в случае, если предоставление этой информации обусловлено процедурой перевода средств платежной системе, услугами которой Пользователь желает воспользоваться.</p>
+
+							<p>Сайт прилагает все усилия для сбережения в сохранности личных данных Пользователя. Личная информация может быть раскрыта в случаях, описанных законодательством, либо когда администрация сочтет подобные действия необходимыми для соблюдения юридической процедуры, судебного распоряжения или легального процесса, необходимого для работы Пользователя с Сайтом</p>.
+
+							<p>В других случаях ни при каких условиях информация, которую Пользователь передает Сайту, не будет раскрыта третьим лицам.</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<header class="header">
+			<div class="header__container">
+				<div class="header__logo logo-header">
+					<a href="#" class="logo-header__img"><img src="img/header/logo.png" alt="#"></a>
+					<p class="logo-header__text">Производство и установка москитных сеток в СПБ</p>
+				</div>
+				<div class="header__sochial sochial-header">
+					<div class="sochial-header__icons">
+						<a href="#"><img src="img/header/01.png" alt="#"></a>
+
+					</div>
+					<p class="sochial-header__text">
+						Установили более
+						15000 москитных сеток
+					</p>
+				</div>
+				<div class="header__number number-header">
+					<a class="number-header__tel" href="tel:+78124674065">+7 (812) 467-40-65</a>
+
+					<p class="number-header__text">
+						Сейчас работаем – Звоните
+					</p>
+
+
+					<!-- <div class="header__menu menu">
+			<button type="button" class="menu__icon icon-menu"><span></span></button>
+			<nav class="menu__body">
+				<ul class="menu__list">
+					<li class="menu__item"><a href="" class="menu__link"></a></li>
+				</ul>
+			</nav>
+		</div> -->
+				</div>
+				<a data-ripple data-da=".number-header, 670" href="#" data-popup="#popup" type="button" class="header__button">ВАМ ПЕРЕЗВОНИТЬ?</a>
+		</header>
+		<main class="page">
+			<section class="page__hero hero">
+				<img class="hero__img" data-src="img/header/hero-bg.png" alt="#">
+				<div class="hero__container ">
+					<h1 data-watch class="hero__title">Москитные сетки на окна
+						и двери в СПб и ЛО<br>
+						<strong>с гарантией 24 месяца</strong>
+					</h1>
+					<ul data-watch class="hero__items">
+						<li class="hero__list">Изготовление и установка за 1 день</li>
+						<li class="hero__list">Крепкие сетки, рамы и ручки</li>
+						<li class="hero__list">Мелкая ячейка от пыльцы и мошек</li>
+						<li class="hero__list">Сеткам не страшны соседские окурки</li>
+
+					</ul>
+					<div data-watch class="hero__button">
+						<a data-ripple data-popup="#popup-two" href="#" class="hero__button-link">ЗАКАЗАТЬ МОСКИТНУЮ СЕТКУ
+							<div class="hero__button-animation"></div>
+						</a>
+					</div>
+				</div>
+			</section>
+			<div class="page__dignity dignity">
+				<div class="dignity__container">
+					<div data-watch class="dignity__body">
+						<div class="dignity__column">
+							<img class="dignity__images" src="img/dignity/01.png" alt="#">
+							<p class="dignity__text"><span>Всего от 890 рублей</span> благодаря собственному производству</p>
+						</div>
+						<div class="dignity__column">
+							<img class="dignity__images" src="img/dignity/02.png" alt="#">
+							<p class="dignity__text"><span>Профессиональный монтаж</span>
+								без щелей. Сетка не улетит от ветра</p>
+						</div>
+						<div class="dignity__column">
+							<img class="dignity__images" src="img/dignity/03.png" alt="#">
+							<p class="dignity__text"><span>Долговечность.</span> Не нужно снимать на зиму. Не выгорает на
+								солнце</p>
+
+						</div>
+						<div class="dignity__column">
+							<img class="dignity__images" src="img/dignity/04.png" alt="#">
+							<p class="dignity__text"><span>Покраска в любой цвет</span>
+								по шкале RAL и под дерево</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<section class="page__types types">
+				<div class="types__container">
+					<h2 data-watch class="types__title"><strong>Устанавливаем разные типы</strong> конструкций москитных
+						сеток</h2>
+					<div class="types__body">
+						<article class="types__article">
+							<div class="types__items">
+								<img class="types__img" src="img/types/01.png" alt="#">
+								<h3 class="types__title-article">Рамочная москитная сетка</h3>
+								<p class="types__text">Универсальный тип москитных сеток, оптимальный вариант
+									для любых оконных конструкций</p>
+								<div class="types__price">от 1000р/м2</div>
+								<div class="types__buttons">
+									<a data-popup="#popup-two" class="types__button">ЗАКАЗАТЬ СЕТКУ</a>
+									<div class="hero__button-animation"></div>
+								</div>
+							</div class="types__items">
+						</article>
+						<article class="types__article">
+							<div class="types__items">
+								<img class="types__img" src="img/types/02.png" alt="#">
+								<h3 class="types__title-article">Раздвижная москитная сетка</h3>
+								<p class="types__text">Передвигается вправо-влево
+									по направляющим, подходит
+									для раздвижных окон</p>
+								<div class="types__price">от 2000р/м2</div>
+								<div class="types__buttons">
+									<a data-popup="#popup-two" href="#" class="types__button">ЗАКАЗАТЬ СЕТКУ</a>
+									<div class="hero__button-animation"></div>
+								</div>
+							</div class="types__items">
+						</article>
+						<article class="types__article">
+							<div class="types__items">
+								<img class="types__img" src="img/types/03.png" alt="#">
+								<h3 class="types__title-article">Рулонная москитная сетка</h3>
+								<p class="types__text">Скатывается в рулон в верхней части окна и раскатывается
+									на нужную длину</p>
+								<div class="types__price">от 6500р/м2</div>
+								<div class="types__buttons">
+									<a data-popup="#popup-two" href="#" class="types__button">ЗАКАЗАТЬ СЕТКУ</a>
+									<div class="hero__button-animation"></div>
+								</div>
+							</div class="types__items">
+						</article>
+						<article class="types__article">
+							<div class="types__items">
+								<img class="types__img" src="img/types/04.png" alt="#">
+								<h3 class="types__title-article">Дверная москитная сетка</h3>
+								<p class="types__text">На петлях. Москитная сетка открывается и закрывается как дверь</p>
+								<div class="types__price">оот 2000р/м2</div>
+								<div class="types__buttons">
+									<a data-popup="#popup-two" href="#" class="types__button">ЗАКАЗАТЬ СЕТКУ</a>
+									<div class="hero__button-animation"></div>
+								</div>
+							</div class="types__items">
+						</article>
+						<article class="types__article">
+							<div class="types__items">
+								<img class="types__img" src="img/types/05.png" alt="#">
+								<h3 class="types__title-article">Складывается и раскладывается как "гармошка", подходит
+									для больших проемов</h3>
+								<p class="types__text">Универсальный тип москитных сеток, оптимальный вариант
+									для любых оконных конструкций</p>
+								<div class="types__price">от 12000р/м2</div>
+								<div class="types__buttons">
+									<a data-popup="#popup-two" href="#" class="types__button">ЗАКАЗАТЬ СЕТКУ</a>
+									<div class="hero__button-animation"></div>
+								</div>
+							</div class="types__items">
+						</article>
+						<article class="types__article">
+							<div class="types__items">
+								<img class="types__img" src="img/types/06.png" alt="#">
+								<h3 class="types__title-article">Вставная москитная сетка</h3>
+								<p class="types__text">Стандартная конструкция, отличается простым
+									монтажом изнутри</p>
+								<div class="types__price">Вставная москитная сеткаСтандартная конструкция, отличается простым
+									монтажом изнутриот 2000р/м2</div>
+								<div class="types__buttons">
+									<a data-popup="#popup-two" href="#" class="types__button">ЗАКАЗАТЬ СЕТКУ</a>
+									<div class="hero__button-animation"></div>
+								</div>
+							</div class="types__items">
+						</article>
+						<article class="types__article">
+							<div class="types__items">
+								<img class="types__img" src="img/types/06.png" alt="#">
+								<h3 class="types__title-article">Москитная
+									сетка “крыло”</h3>
+								<p class="types__text">Вставная сетка со специальным креплением "крыло" для более простого и
+									надежного монтажа</p>
+								<div class="types__price">от 2000р/м2</div>
+								<div class="types__buttons">
+									<a data-popup="#popup-two" href="#" class="types__button">ЗАКАЗАТЬ СЕТКУ</a>
+									<div class="hero__button-animation"></div>
+								</div>
+							</div class="types__items">
+						</article>
+						<article class="types__article types__article--action">
+							<div class="types__items types__items--action">
+								<img class="types__img" src="img/types/08.png" alt="#">
+								<h3 class="types__title-article types__title-article--action">Оставьте свою заявку на москитную
+									сетку
+									и получите скидку 5%</h3>
+								<p class="types__text types__text--action">Акция действует <br> <strong>до конца
+										месяца!</strong></p>
+
+								<div class="types__buttons">
+									<a data-popup="#popup-two" href="#" class="types__button">ЗАКАЗАТЬ СЕТКУ</a>
+									<div class="hero__button-animation"></div>
+								</div>
+							</div class="types__items">
+						</article>
+					</div>
+				</div>
+			</section>
+			<section class="page__form form">
+				<img data-da=".content-form, 991.98" class="form__img-bg" data-src="img/form/01.png" alt="#">
+				<div class="form__container">
+					<div class="form__content content-form">
+						<div class="content-form__body">
+							<h2 data-watch class="content-form__title">Не знаете
+								как выбрать москитную сетку?</h2>
+							<div data-watch class="content-form__subtitle">Запишитесь
+								на бесплатный выезд мастера</div>
+							<ul data-watch class="content-form__list">
+								<li class="content-form__link"><span>Поможет определиться с типом москитной сетки</span></li>
+								<li class="content-form__link"><span>Озвучит точную стоимость</span></li>
+								<li class="content-form__link"><span>Ответит на все интересующие вопросы</span></li>
+							</ul>
+						</div>
+					</div>
+					<div data-da=".content-form, 991.98" class="form__img-men img-men-form">
+						<img class="img-men-form__img" src="img/form/02.png" alt="#">
+						<div class="img-men-form__items">
+							<div class="img-men-form__name">Сергей Новиков</div>
+							<div class="img-men-form__job">Специалист «Сетки-Питер»</div>
+						</div>
+
+					</div>
+					<div class="form__form-body body-form">
+						<h3 data-watch class="body-form__title">Оставьте заявку на
+							<strong>бесплатный выезд мастера</strong>
+						</h3>
+						<div data-watch class="body-form__subtitle">Напишите нам в удобный для вас мессенджер</div>
+						<a href="#" class="body-form__whatsapp">Написать в WhatsApp</a>
+						<a href="#" class="body-form__telegram">Написать в Telegram</a>
+						<div class="body-form__text">Или оставьте заявку на звонок</div>
+						<form class="body-form__form" action="files/sendmail/sendmail.php" method="POST">
+
+							<div class="input-group">
+								<input required="" type="text" name="text" autocomplete="off" class="input-body ">
+								<label class="user-label">Введите ваш телефон</label>
+							</div>
+							<button type="submit" class="body-form__button button types__button">ЗАКАЗАТЬ БЕСПЛАТНЫЙ ВЫЕЗД
+								МАСТЕРА</button>
+							<div class="body-form__checkbox checkbox">
+								<input data-required id="c_2" data-error="Ознакомтесь с условием передачи информации" class="body-form__checkbox-input  checkbox__input" type="checkbox" value="1" name="form[checkbox]">
+								<label for="c_2" class="body-form__checkbox-label checkbox__label"><span class="body-form__checkbox-text checkbox__text">Я принимаю <a href="#">условия передачи
+											информации</a></span></label>
+							</div>
+						</form>
+					</div>
+				</div>
+			</section>
+			<section class="page__species species">
+				<div class="species__container">
+					<h2 data-watch class="species__title">Используем <strong>6 видов полотен</strong> для москитных сеток
+					</h2>
+					<div class="species__body">
+						<article class="species__article article-species">
+							<img class="article-species__img" src="img/species/01.jpg" alt="#">
+							<div class="article-species__price">от 890р</div>
+							<div class="article-species__items">
+								<h3 class="article-species__title">Стандарт</h3>
+								<div class="article-species__subtitle">Защита от крупных насекомых</div>
+								<div class="article-species__rating">
+									<p class="article-species__text">Прозрачность</p>
+									<div class="article-species__arrow">
+										<img src="img/species/fav.svg" alt="arrow">
+										<img src="img/species/fav.svg" alt="arrow">
+										<img src="img/species/fav.svg" alt="arrow">
+										<img src="img/species/fav-black.svg" alt="arrow">
+										<img src="img/species/fav-black.svg" alt="arrow">
+
+									</div>
+								</div>
+								<div class="article-species__rating">
+									<p class="article-species__text">Прочность</p>
+									<div class="article-species__arrow">
+										<img src="img/species/fav.svg" alt="arrow">
+										<img src="img/species/fav.svg" alt="arrow">
+										<img src="img/species/fav-black.svg" alt="arrow">
+										<img src="img/species/fav-black.svg" alt="arrow">
+										<img src="img/species/fav-black.svg" alt="arrow">
+
+									</div>
+								</div>
+								<div class="article-species__rating">
+									<p class="article-species__text">Продуваемость</p>
+									<div class="article-species__arrow">
+										<img src="img/species/fav.svg" alt="arrow">
+										<img src="img/species/fav.svg" alt="arrow">
+										<img src="img/species/fav.svg" alt="arrow">
+										<img src="img/species/fav-black.svg" alt="arrow">
+										<img src="img/species/fav-black.svg" alt="arrow">
+
+									</div>
+								</div>
+								<div class="article-species__rating">
+									<p class="article-species__text">Защита от пыли</p>
+									<div class="article-species__arrow">
+										<img src="img/species/fav.svg" alt="arrow">
+										<img src="img/species/fav.svg" alt="arrow">
+										<img src="img/species/fav-black.svg" alt="arrow">
+										<img src="img/species/fav-black.svg" alt="arrow">
+										<img src="img/species/fav-black.svg" alt="arrow">
+
+									</div>
+								</div>
+
+							</div>
+						</article>
+						<article class="species__article article-species">
+							<img class="article-species__img" data-src="img/species/02.jpg" alt="#">
+							<div class="article-species__price">от 1700р</div>
+							<div class="article-species__items">
+								<h3 class="article-species__title">Антикошка</h3>
+								<div class="article-species__subtitle">Безопасность ваших питомцев</div>
+								<div class="article-species__rating">
+									<p class="article-species__text">Прозрачность</p>
+									<div class="article-species__arrow">
+										<img src="img/species/fav.svg" alt="arrow">
+										<img src="img/species/fav.svg" alt="arrow">
+										<img src="img/species/fav-black.svg" alt="arrow">
+										<img src="img/species/fav-black.svg" alt="arrow">
+										<img src="img/species/fav-black.svg" alt="arrow">
+
+									</div>
+								</div>
+								<div class="article-species__rating">
+									<p class="article-species__text">Прочность</p>
+									<div class="article-species__arrow">
+										<img src="img/species/fav.svg" alt="arrow">
+										<img src="img/species/fav.svg" alt="arrow">
+										<img src="img/species/fav.svg" alt="arrow">
+										<img src="img/species/fav.svg" alt="arrow">
+										<img src="img/species/fav-black.svg" alt="arrow">
+
+									</div>
+								</div>
+								<div class="article-species__rating">
+									<p class="article-species__text">Продуваемость</p>
+									<div class="article-species__arrow">
+										<img src="img/species/fav.svg" alt="arrow">
+										<img src="img/species/fav.svg" alt="arrow">
+										<img src="img/species/fav.svg" alt="arrow">
+										<img src="img/species/fav-black.svg" alt="arrow">
+										<img src="img/species/fav-black.svg" alt="arrow">
+
+									</div>
+								</div>
+								<div class="article-species__rating">
+									<p class="article-species__text">Защита от пыли</p>
+									<div class="article-species__arrow">
+										<img src="img/species/fav.svg" alt="arrow">
+										<img src="img/species/fav.svg" alt="arrow">
+										<img src="img/species/fav-black.svg" alt="arrow">
+										<img src="img/species/fav-black.svg" alt="arrow">
+										<img src="img/species/fav-black.svg" alt="arrow">
+
+									</div>
+								</div>
+
+							</div>
+						</article>
+						<article class="species__article article-species">
+							<img class="article-species__img" src="img/species/03.jpg" alt="#">
+							<div class="article-species__price">от 1900р</div>
+
+							<div class="article-species__items">
+								<h3 class="article-species__title">Антимошка</h3>
+								<div class="article-species__subtitle">Защитит даже от мелких мошек</div>
+								<div class="article-species__rating">
+									<p class="article-species__text">Прозрачность</p>
+									<div class="article-species__arrow">
+										<img src="img/species/fav.svg" alt="arrow">
+										<img src="img/species/fav.svg" alt="arrow">
+										<img src="img/species/fav.svg" alt="arrow">
+										<img src="img/species/fav.svg" alt="arrow">
+										<img src="img/species/fav-black.svg" alt="arrow">
+
+									</div>
+								</div>
+								<div class="article-species__rating">
+									<p class="article-species__text">Прочность</p>
+									<div class="article-species__arrow">
+										<img src="img/species/fav.svg" alt="arrow">
+										<img src="img/species/fav.svg" alt="arrow">
+										<img src="img/species/fav.svg" alt="arrow">
+										<img src="img/species/fav-black.svg" alt="arrow">
+										<img src="img/species/fav-black.svg" alt="arrow">
+
+									</div>
+								</div>
+								<div class="article-species__rating">
+									<p class="article-species__text">Продуваемость</p>
+									<div class="article-species__arrow">
+										<img src="img/species/fav.svg" alt="arrow">
+										<img src="img/species/fav-black.svg" alt="arrow">
+										<img src="img/species/fav-black.svg" alt="arrow">
+										<img src="img/species/fav-black.svg" alt="arrow">
+										<img src="img/species/fav-black.svg" alt="arrow">
+
+									</div>
+								</div>
+								<div class="article-species__rating">
+									<p class="article-species__text">Защита от пыли</p>
+									<div class="article-species__arrow">
+										<img src="img/species/fav.svg" alt="arrow">
+										<img src="img/species/fav.svg" alt="arrow">
+										<img src="img/species/fav.svg" alt="arrow">
+										<img src="img/species/fav.svg" alt="arrow">
+										<img src="img/species/fav-black.svg" alt="arrow">
+
+									</div>
+								</div>
+
+							</div>
+						</article>
+						<article class="species__article article-species">
+							<img class="article-species__img" src="img/species/04.jpg" alt="#">
+							<div class="article-species__price">от 2900р</div>
+
+							<div class="article-species__items">
+								<h3 class="article-species__title">Антипыль</h3>
+								<div class="article-species__subtitle">Защитит ваш дом от пыли и пыльцы</div>
+								<div class="article-species__rating">
+									<p class="article-species__text">Прозрачность</p>
+									<div class="article-species__arrow">
+										<img src="img/species/fav.svg" alt="arrow">
+										<img src="img/species/fav.svg" alt="arrow">
+										<img src="img/species/fav-black.svg" alt="arrow">
+										<img src="img/species/fav-black.svg" alt="arrow">
+										<img src="img/species/fav-black.svg" alt="arrow">
+
+									</div>
+								</div>
+								<div class="article-species__rating">
+									<p class="article-species__text">Прочность</p>
+									<div class="article-species__arrow">
+										<img src="img/species/fav.svg" alt="arrow">
+										<img src="img/species/fav.svg" alt="arrow">
+										<img src="img/species/fav.svg" alt="arrow">
+										<img src="img/species/fav-black.svg" alt="arrow">
+										<img src="img/species/fav-black.svg" alt="arrow">
+
+									</div>
+								</div>
+								<div class="article-species__rating">
+									<p class="article-species__text">Продуваемость</p>
+									<div class="article-species__arrow">
+										<img src="img/species/fav.svg" alt="arrow">
+										<img src="img/species/fav.svg" alt="arrow">
+										<img src="img/species/fav-black.svg" alt="arrow">
+										<img src="img/species/fav-black.svg" alt="arrow">
+										<img src="img/species/fav-black.svg" alt="arrow">
+
+									</div>
+								</div>
+								<div class="article-species__rating">
+									<p class="article-species__text">Защита от пыли</p>
+									<div class="article-species__arrow">
+										<img src="img/species/fav.svg" alt="arrow">
+										<img src="img/species/fav.svg" alt="arrow">
+										<img src="img/species/fav.svg" alt="arrow">
+										<img src="img/species/fav.svg" alt="arrow">
+										<img src="img/species/fav.svg" alt="arrow">
+
+									</div>
+								</div>
+
+							</div>
+						</article>
+						<article class="species__article article-species">
+							<img class="article-species__img" src="img/species/05.jpg" alt="#">
+							<div class="article-species__price">от 2300р</div>
+
+							<div class="article-species__items">
+								<h3 class="article-species__title">Антиптица</h3>
+								<div class="article-species__subtitle">Не прокусит даже крупная птица</div>
+								<div class="article-species__rating">
+									<p class="article-species__text">Прозрачность</p>
+									<div class="article-species__arrow">
+										<img src="img/species/fav.svg" alt="arrow">
+										<img src="img/species/fav.svg" alt="arrow">
+										<img src="img/species/fav.svg" alt="arrow">
+										<img src="img/species/fav.svg" alt="arrow">
+										<img src="img/species/fav-black.svg" alt="arrow">
+
+									</div>
+								</div>
+								<div class="article-species__rating">
+									<p class="article-species__text">Прочность</p>
+									<div class="article-species__arrow">
+										<img src="img/species/fav.svg" alt="arrow">
+										<img src="img/species/fav.svg" alt="arrow">
+										<img src="img/species/fav.svg" alt="arrow">
+										<img src="img/species/fav.svg" alt="arrow">
+										<img src="img/species/fav.svg" alt="arrow">
+
+									</div>
+								</div>
+								<div class="article-species__rating">
+									<p class="article-species__text">Продуваемость</p>
+									<div class="article-species__arrow">
+										<img src="img/species/fav.svg" alt="arrow">
+										<img src="img/species/fav.svg" alt="arrow">
+										<img src="img/species/fav.svg" alt="arrow">
+										<img src="img/species/fav.svg" alt="arrow">
+										<img src="img/species/fav-black.svg" alt="arrow">
+
+									</div>
+								</div>
+								<div class="article-species__rating">
+									<p class="article-species__text">Защита от пыли</p>
+									<div class="article-species__arrow">
+										<img src="img/species/fav.svg" alt="arrow">
+										<img src="img/species/fav.svg" alt="arrow">
+										<img src="img/species/fav.svg" alt="arrow">
+										<img src="img/species/fav-black.svg" alt="arrow">
+										<img src="img/species/fav-black.svg" alt="arrow">
+
+									</div>
+								</div>
+
+							</div>
+						</article>
+						<article class="species__article article-species">
+							<img class="article-species__img" src="img/species/06.jpg" alt="#">
+							<div class="article-species__price">от 1900р</div>
+
+							<div class="article-species__items">
+								<h3 class="article-species__title">Ультравью</h3>
+								<div class="article-species__subtitle">Максимальный обзор и прочность</div>
+								<div class="article-species__rating">
+									<p class="article-species__text">Прозрачность</p>
+									<div class="article-species__arrow">
+										<img src="img/species/fav.svg" alt="arrow">
+										<img src="img/species/fav.svg" alt="arrow">
+										<img src="img/species/fav.svg" alt="arrow">
+										<img src="img/species/fav.svg" alt="arrow">
+										<img src="img/species/fav.svg" alt="arrow">
+
+									</div>
+								</div>
+								<div class="article-species__rating">
+									<p class="article-species__text">Прочность</p>
+									<div class="article-species__arrow">
+										<img src="img/species/fav.svg" alt="arrow">
+										<img src="img/species/fav.svg" alt="arrow">
+										<img src="img/species/fav.svg" alt="arrow">
+										<img src="img/species/fav-black.svg" alt="arrow">
+										<img src="img/species/fav-black.svg" alt="arrow">
+
+									</div>
+								</div>
+								<div class="article-species__rating">
+									<p class="article-species__text">Продуваемость</p>
+									<div class="article-species__arrow">
+										<img src="img/species/fav.svg" alt="arrow">
+										<img src="img/species/fav.svg" alt="arrow">
+										<img src="img/species/fav.svg" alt="arrow">
+										<img src="img/species/fav.svg" alt="arrow">
+										<img src="img/species/fav-black.svg" alt="arrow">
+
+									</div>
+								</div>
+								<div class="article-species__rating">
+									<p class="article-species__text">Защита от пыли</p>
+									<div class="article-species__arrow">
+										<img src="img/species/fav.svg" alt="arrow">
+										<img src="img/species/fav.svg" alt="arrow">
+										<img src="img/species/fav-black.svg" alt="arrow">
+										<img src="img/species/fav-black.svg" alt="arrow">
+										<img src="img/species/fav-black.svg" alt="arrow">
+
+									</div>
+								</div>
+
+							</div>
+						</article>
+					</div>
+				</div>
+			</section>
+			<section class="page__calculator calculator">
+				<div class="calculator__container">
+					<h2 data-watch class="calculator__title"><strong>Получите расчет стоимости</strong> москитной сетки + 1
+						из 3
+						подарков от нашей компании</h2>
+					<div class="calculator__body">
+						<!-- Оболонка слайдера -->
+						<div class="calculator__slider-body">
+							<form action="files/sendmail/sendmail.php" method="POST" class="calculator__slider swiper">
+								<!-- Частина слайдера, що рухається -->
+								<div class="calculator__progress">
+									<div class="calculator__pagination swiper-pagination"></div>
+									<p id="text" class="fraction-controll__text-last"> <strong>Отлично, остался последний
+											шаг!</strong>
+										Напишите Ваш номер телефона для получения расчета стоимости москитной сетки и закрепления
+										подарка за вами</p>
+									<div id="progress" class="controll-main-block__fraction fraction-controll">
+										<p class="fraction-controll__text">
+											Быстрый расчет стоимости москитной сетки</p>
+
+										<div><span class="fraction-controll__current"> 1 </span> / <span class="fraction-controll__all"> </span></div>
+									</div>
+
+
+								</div>
+
+								<div class="calculator__wrapper swiper-wrapper">
+									<!-- Слайд -->
+									<div class="calculator__slide swiper-slide slide-calculator slide-main-block">
+										<label class="slide-calculator__label">Ширина вашего окна (мм)</label>
+										<input autocomplete="off" type="text" name="form[width]" data-error="Ошибка" placeholder="" class="slide-calculator__input input">
+									</div>
+									<div class="calculator__slide swiper-slide slide-calculator slide-main-block">
+										<label class="slide-calculator__label">Длина вашего окна (мм)</label>
+										<input autocomplete="off" type="text" name="form[length]" data-error="Ошибка" placeholder="" class="slide-calculator__input input">
+									</div>
+									<div class="calculator__slide swiper-slide slide-calculator slide-main-block">
+										<h2 class="slide-calculator__label">Какое количество сеток необходимо?</h2>
+										<div class="slide-calculator__subtitle">Выберите нужный вариант из списка</div>
+										<select data-scroll="100" name="form[select]" data-class-modif="form">
+											<option value="1" selected>1</option>
+											<option value="2">2</option>
+											<option value="3">3</option>
+											<option value="4">4</option>
+											<option value="5">5</option>
+											<option value="6">6</option>
+											<option value="7">7</option>
+											<option value="8">8</option>
+											<option value="9">9</option>
+											<option value="10">10</option>
+										</select>
+									</div>
+									<div class="calculator__slide swiper-slide slide-calculator slide-main-block">
+										<div class="slide-calculator__body">
+											<h3 class="slide-calculator__label">Какой нужен тип конструкции?</h3>
+											<div class="options">
+												<div class="options__item">
+													<input data-required id="o_1" class="options__input input" checked type="radio" value="1" name="option">
+													<label for="o_1" class="options__label">
+														<div class="options__text"><img src="img/types/01.png" alt="#"></div>
+
+													</label>
+													<h3 class="options__title">Рамочная</h3>
+												</div>
+												<div class="options__item">
+													<input data-required id="o_2" class="options__input input" type="radio" value="2" name="option">
+													<label for="o_2" class="options__label">
+														<div class="options__text"><img src="img/types/02.png" alt="#"></div>
+													</label>
+													<h3 class="options__title">Раздвижная</h3>
+												</div>
+												<div class="options__item">
+													<input data-required id="o_3" class="options__input input" checked type="radio" value="1" name="option">
+													<label for="o_3" class="options__label">
+														<div class="options__text"><img src="img/types/03.png" alt="#"></div>
+													</label>
+													<h3 class="options__title">Рулонная</h3>
+												</div>
+												<div class="options__item">
+													<input data-required id="o_4" class="options__input input" type="radio" value="2" name="option">
+													<label for="o_4" class="options__label">
+														<div class="options__text"><img src="img/types/04.png" alt="#"></div>
+													</label>
+													<h3 class="options__title">Дверная</h3>
+												</div>
+												<div class="options__item">
+													<input data-required id="o_5" class="options__input input" type="radio" value="2" name="option">
+													<label for="o_5" class="options__label">
+														<div class="options__text"><img src="img/types/05.png" alt="#"></div>
+													</label>
+													<h3 class="options__title">Плиссе</h3>
+												</div>
+												<div class="options__item">
+													<input data-required id="o_6" class="options__input input" type="radio" value="2" name="option">
+													<label for="o_6" class="options__label">
+														<div class="options__text"><img src="img/types/06.png" alt="#"></div>
+													</label>
+													<h3 class="options__title">Вставная/Крыло</h3>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="calculator__slide swiper-slide slide-calculator slide-main-block">
+										<div class="slide-calculator__body">
+											<h3 class="slide-calculator__label">Какой нужен тип конструкции?</h3>
+											<div class="options">
+												<div class="options__item">
+													<input data-required id="o_7" class="options__input input" checked type="radio" value="1" name="option">
+													<label for="o_7" class="options__label">
+														<div class="options__text"><img src="img/species/01.jpg" alt="#"></div>
+
+													</label>
+													<h3 class="options__title">Стандарт</h3>
+												</div>
+												<div class="options__item">
+													<input data-required id="o_8" class="options__input input" type="radio" value="2" name="option">
+													<label for="o_8" class="options__label">
+														<div class="options__text"><img src="img/species/02.jpg" alt="#"></div>
+													</label>
+													<h3 class="options__title">Антикошка</h3>
+												</div>
+												<div class="options__item">
+													<input data-required id="o_9" class="options__input input" checked type="radio" value="1" name="option">
+													<label for="o_9" class="options__label">
+														<div class="options__text"><img src="img/species/03.jpg" alt="#"></div>
+													</label>
+													<h3 class="options__title">Антимошка</h3>
+												</div>
+												<div class="options__item">
+													<input data-required id="o_10" class="options__input input" type="radio" value="2" name="option">
+													<label for="o_10" class="options__label">
+														<div class="options__text"><img src="img/species/04.jpg" alt="#"></div>
+													</label>
+													<h3 class="options__title">Антипыль</h3>
+												</div>
+												<div class="options__item">
+													<input data-required id="o_11" class="options__input input" type="radio" value="2" name="option">
+													<label for="o_11" class="options__label">
+														<div class="options__text"><img src="img/species/05.jpg" alt="#"></div>
+													</label>
+													<h3 class="options__title">Антиптица</h3>
+												</div>
+												<div class="options__item">
+													<input data-required id="o_12" class="options__input input" type="radio" value="2" name="option">
+													<label for="o_12" class="options__label">
+														<div class="options__text"><img src="img/species/06.jpg" alt="#"></div>
+													</label>
+													<h3 class="options__title">Ультравью</h3>
+												</div>
+												<div class="options__item">
+													<input data-required id="o_13" class="options__input input" type="radio" value="2" name="option">
+													<label for="o_13" class="options__label">
+														<div class="options__text"><img src="img/calc/help.png" alt="#"></div>
+													</label>
+													<h3 class="options__title">Не знаю, нужна помощь</h3>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="calculator__slide swiper-slide slide-calculator slide-main-block">
+										<div class="slide-calculator__body">
+											<h3 class="slide-calculator__label">Какой нужен тип конструкции?</h3>
+											<div class="options">
+												<div class="options__item">
+													<input data-required id="o_14" class="options__input input" checked type="radio" value="1" name="option">
+													<label for="o_14" class="options__label">
+														<div class="options__text"><img src="img/bracing/01.jpg" alt="#"></div>
+
+													</label>
+													<h3 class="options__title">Z-КРЕПЛЕНИЕ</h3>
+												</div>
+												<div class="options__item">
+													<input data-required id="o_15" class="options__input input" type="radio" value="2" name="option">
+													<label for="o_15" class="options__label">
+														<div class="options__text"><img src="img/bracing/03.jpg" alt="#"></div>
+													</label>
+													<h3 class="options__title">ШТОК (ПЛУНЖЕР)</h3>
+												</div>
+												<div class="options__item">
+													<input data-required id="o_16" class="options__input input" checked type="radio" value="1" name="option">
+													<label for="o_16" class="options__label">
+														<div class="options__text"><img src="img/bracing/04.jpg" alt="#"></div>
+													</label>
+													<h3 class="options__title">ФЛАЖОК</h3>
+												</div>
+
+												<div class="options__item">
+													<input data-required id="o_17" class="options__input input" type="radio" value="2" name="option">
+													<label for="o_17" class="options__label">
+														<div class="options__text"><img src="img/calc/help.png" alt="#"></div>
+													</label>
+													<h3 class="options__title">Не знаю, нужна помощь</h3>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="calculator__slide swiper-slide slide-calculator slide-main-block">
+										<div class="slide-calculator__body">
+											<h3 class="slide-calculator__label">Какой бы подарок вы хотели получить от нашей
+												компании?</h3>
+											<div class="options">
+												<div class="options__item">
+													<input data-required id="o_18" class="options__input input" checked type="radio" value="1" name="option">
+													<label for="o_18" class="options__label">
+														<div class="options__text"><img src="img/calc/03.png" alt="#"></div>
+
+													</label>
+													<h3 class="options__title">Бесплатная диагностика окон</h3>
+												</div>
+												<div class="options__item">
+													<input data-required id="o_19" class="options__input input" type="radio" value="2" name="option">
+													<label for="o_19" class="options__label">
+														<div class="options__text"><img src="img/calc/04.jpg" alt="#"></div>
+													</label>
+													<h3 class="options__title">Скидка 5%</h3>
+												</div>
+												<div class="options__item">
+													<input data-required id="o_20" class="options__input input" checked type="radio" value="1" name="option">
+													<label for="o_20" class="options__label">
+														<div class="options__text"><img src="img/calc/05.png" alt="#"></div>
+													</label>
+													<h3 class="options__title">Чехол для хранения и набор по уходу</h3>
+												</div>
+
+
+											</div>
+										</div>
+									</div>
+
+									<div class="calculator__slide swiper-slide slide-calculator slide-main-block">
+
+										<input autocomplete="off" type="text" name="form[name]" data-error="Заполните поле " placeholder="Как мы можем к Вам обращаться?" class="slide-calculator__input-name input">
+										<input autocomplete="off" type="text" name="form[name]" data-error="Заполните поле " placeholder="Введите ваш телефон" class="slide-calculator__input-name input">
+
+
+									</div>
+
+
+
+								</div>
+								<!-- Якщо потрібна навігація (ліворуч/праворуч) -->
+								<div class="calculator__navigacions">
+									<div data-ripple type="button " class="calculator__button-prev swiper-button-prev">Назад
+									</div>
+									<div data-ripple type="button" id="next" class="calculator__button-next swiper-button-next">
+										Далее</div>
+									<button data-ripple id="ror" class="calculator__button-form    button">Получить расчет и
+										подарок</button>
+
+								</div>
+								<!-- Якщо потрібен скролбар -->
+
+							</form>
+
+						</div>
+						<div class="calculator__content content-calculator">
+							<div class="content-calculator__body">
+								<div class="content-calculator__top">
+									<div class="content-calculator__avatar"><img src="img/calc/02.png" alt="#"></div>
+									<div class="content-calculator__items">
+										<div class="content-calculator__name">Виктор Тарасов</div>
+										<div class="content-calculator__job">Старший специалист
+											«Сетки-Питер»</div>
+									</div>
+								</div>
+								<p class="content-calculator__text">Нужна консультация?
+									Отвечу на все вопросы</p>
+								<a href="tel:+78124674065" class="content-calculator__number">+7 (812) 467-40-65</a>
+								<div class="content-calculator__sochial-body">
+									<img src="img/calc/tele.svg" alt="#">
+									<img src="img/calc/ico.svg" alt="#">
+								</div>
+							</div>
+							<p class="content-calculator__text"><strong>После прохождения теста,</strong> Вы получите:</p>
+							<div class="content-calculator__bottom">
+								<img src="img/calc/01.png" alt="#">
+								<div class="content-calculator__text-bottom">Расчет стоимости
+									ремонта окон
+									<strong>+1 из 3 подарков</strong>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+			</section>
+			<section class="page__bracing bracing">
+				<div class="bracing__container">
+					<h2 data-watch class="bracing__title"><strong>4 вида крепления</strong> для всех окон</h2>
+					<div class="bracing__body">
+						<article class="bracing__article">
+							<img class="bracing__img" src="img/bracing/01.jpg" alt="">
+							<h3 class="bracing__title-article">Z-КРЕПЛЕНИЕ</h3>
+							<p class="bracing__text">Пластиковое Служит 3-4 года</p>
+						</article>
+						<article class="bracing__article">
+							<img class="bracing__img" src="img/bracing/02.jpg" alt="">
+							<h3 class="bracing__title-article">Z-КРЕПЛЕНИЕ</h3>
+							<p class="bracing__text">Металлическое
+								Служит от 10 лет</p>
+						</article>
+						<article class="bracing__article">
+							<img class="bracing__img" src="img/bracing/03.jpg" alt="">
+							<h3 class="bracing__title-article">ШТОК (ПЛУНЖЕР)</h3>
+							<p class="bracing__text">Надежная
+								фиксация сетки</p>
+						</article>
+						<article class="bracing__article">
+							<img class="bracing__img" src="img/bracing/04.jpg" alt="">
+							<h3 class="bracing__title-article">ФЛАЖОК</h3>
+							<p class="bracing__text">Не требует
+								сверления рамы</p>
+						</article>
+					</div>
+				</div>
+			</section>
+			<section class="page__form-block form-block">
+				<div class="form-block__container">
+					<div class="form-block__body">
+						<h2 data-watch class="form-block__title">Изготовим и установим сетку уже сегодня!</h2>
+						<h3 data-watch class="form-block__subtitle">Просто оставьте заявку и избавьтесь от насекомых навсегда!
+						</h3>
+						<form class="form-block__form" action="files/sendmail/sendmail.php" method="POST">
+							<input type="text" data-error="Error" placeholder="Введите ваше имя" class="form-block__input input">
+							<input type="text" name="form[phone]" data-error="Error" placeholder="Введите ваш телефон" class="form-block__input input">
+							<div class="form-block__items">
+								<button data-ripple type="submit" class="form-block__button types__button">ЗАКАЗАТЬ СЕТКУ
+									СЕЙЧАС</button>
+								<div class="body-form__checkbox checkbox">
+									<input data-required id="c_3" data-error="Ознакомтесь с условием передачи информации" class="body-form__checkbox-input  checkbox__input" type="checkbox" value="1" name="form[checkbox]">
+									<label for="c_3" class="body-form__checkbox-label checkbox__label"><span class="body-form__checkbox-text checkbox__text">Я принимаю <a href="#">условия передачи
+												информации</a></span></label>
+								</div>
+							</div>
+						</form>
+					</div>
+				</div>
+			</section>
+			<section class="page__top-quality top-quality">
+				<div class="top-quality__container">
+					<h2 data-watch class="top-quality__title">Вы получите москитную сетку <strong>высшего качества</strong>
+					</h2>
+					<h3 data-watch class="top-quality__subtitle">которая прослужит вам боле 10 лет</h3>
+					<div class="top-quality__body">
+						<div class="top-quality__content content-top-quality">
+							<div class="content-top-quality__article">
+								<img class="content-top-quality__img" src="img/top-quality/01.png" alt="">
+								<div class="content-top-quality__items">
+									<h4 class="content-top-quality__title">Любая сложность</h4>
+									<p class="content-top-quality__text">Изготовим москитную сетку для сложных и больших проемов
+									</p>
+								</div>
+							</div>
+							<div class="content-top-quality__article">
+								<img class="content-top-quality__img" src="img/top-quality/02.png" alt="">
+								<div class="content-top-quality__items">
+									<h4 class="content-top-quality__title">Любой цвет</h4>
+									<p class="content-top-quality__text">Покрасим в любой цвет по шкале RAL и декорирование под
+										фактуру дерева</p>
+								</div>
+							</div>
+							<div class="content-top-quality__article">
+								<img class="content-top-quality__img" src="img/top-quality/03.png" alt="">
+								<div class="content-top-quality__items">
+									<h4 class="content-top-quality__title">Качественная установка</h4>
+									<p class="content-top-quality__text">Установкой москитной сетки будут заниматься
+										квалифицированные мастера с опытом от 5 лет</p>
+								</div>
+							</div>
+						</div>
+						<div data-prlx-parent class="top-quality__images images-top-quality">
+							<img data-prlx data-coefficient="300" data-direction="1" class="images-top-quality__img" src="img/top-quality/04.png" alt="#">
+							<img class="images-top-quality__img-bacr" src="img/top-quality/04.png" alt="#">
+
+							<div class="images-top-quality__items">
+								<div class="images-top-quality__item">
+									<img class="images-top-quality__icon" src="img/top-quality/05.png" alt="#">
+									<p class="images-top-quality__text">Предоставляем
+										официальную гарантию
+										24 месяца</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<section class="page__slider-bg slider-bg">
+				<div class="slider-bg__container">
+					<h2 data-watch class="slider-bg__title">Установили <strong>более 15000 </strong>москитных сеток
+					</h2>
+					<!-- Оболонка слайдера -->
+					<div class="slider-bg__slider swiper">
+						<!-- Частина слайдера, що рухається -->
+						<div data-gallery class="slider-bg__wrapper swiper-wrapper">
+							<!-- Слайд -->
+							<a data-lg-size="1600-1200" href="img/slider/01.jpg" class="slider-bg__slide swiper-slide">
+								<img src="img/slider/01.jpg" />
+							</a>
+
+							<a data-lg-size="1600-1200" href="img/slider/02.jpg" class="slider-bg__slide swiper-slide">
+								<img src="img/slider/02.jpg" />
+							</a>
+							<a data-lg-size="1600-1200" href="img/slider/03.jpg" class="slider-bg__slide swiper-slide">
+								<img src="img/slider/03.jpg" />
+							</a>
+							<a data-lg-size="1600-1200" href="img/slider/04.jpg" class="slider-bg__slide swiper-slide">
+								<img src="img/slider/04.jpg" />
+							</a>
+							<a data-lg-size="1600-1200" href="img/slider/05.jpg" class="slider-bg__slide swiper-slide">
+								<img src="img/slider/05.jpg" />
+							</a>
+							<a data-lg-size="1600-1200" href="img/slider/06.jpg" class="slider-bg__slide swiper-slide">
+								<img src="img/slider/06.jpg" />
+							</a>
+							<a data-lg-size="1600-1200" href="img/slider/07.jpg" class="slider-bg__slide swiper-slide">
+								<img src="img/slider/07.jpg" />
+							</a>
+							<a data-lg-size="1600-1200" href="img/slider/08.jpg" class="slider-bg__slide swiper-slide">
+								<img src="img/slider/08.jpg" />
+							</a>
+							<a data-lg-size="1600-1200" href="img/slider/09.jpg" class="slider-bg__slide swiper-slide">
+								<img src="img/slider/09.jpg" />
+							</a>
+							<a data-lg-size="1600-1200" href="img/slider/10.jpg" class="slider-bg__slide swiper-slide">
+								<img src="img/slider/10.jpg" />
+							</a>
+							<a data-lg-size="1600-1200" href="img/slider/11.jpg" class="slider-bg__slide swiper-slide">
+								<img src="img/slider/11.jpg" />
+							</a>
+							<a data-lg-size="1600-1200" href="img/slider/12.jpg" class="slider-bg__slide swiper-slide">
+								<img src="img/slider/12.jpg" />
+							</a>
+							<a data-lg-size="1600-1200" href="img/slider/13.jpg" class="slider-bg__slide swiper-slide">
+								<img src="img/slider/13.jpg" />
+							</a>
+							<a data-lg-size="1600-1200" href="img/slider/14.jpg" class="slider-bg__slide swiper-slide">
+								<img src="img/slider/14.jpg" />
+							</a>
+							<a data-lg-size="1600-1200" href="img/slider/15.jpg" class="slider-bg__slide swiper-slide">
+								<img src="img/slider/15.jpg" />
+							</a>
+							<a data-lg-size="1600-1200" href="img/slider/16.jpg" class="slider-bg__slide swiper-slide">
+								<img src="img/slider/16.jpg" />
+							</a>
+
+
+							<!-- <div class="slider-bg__slide swiper-slide">
+								<img src="img/slider/01.jpg" alt="#">
+							</div>
+							<div class="slider-bg__slide swiper-slide">
+								<img src="img/slider/02.jpg" alt="#">
+							</div>
+							<div class="slider-bg__slide swiper-slide">
+								<img src="img/slider/03.jpg" alt="#">
+							</div>
+							<div class="slider-bg__slide swiper-slide">
+								<img src="img/slider/04.jpg" alt="#">
+							</div>
+							<div class="slider-bg__slide swiper-slide">
+								<img src="img/slider/05.jpg" alt="#">
+							</div>
+							<div class="slider-bg__slide swiper-slide">
+								<img src="img/slider/06.jpg" alt="#">
+							</div>
+							<div class="slider-bg__slide swiper-slide">
+								<img src="img/slider/07.jpg" alt="#">
+							</div>
+							<div class="slider-bg__slide swiper-slide">
+								<img src="img/slider/08.jpg" alt="#">
+							</div>
+							<div class="slider-bg__slide swiper-slide">
+								<img src="img/slider/09.jpg" alt="#">
+							</div>
+							<div class="slider-bg__slide swiper-slide">
+								<img src="img/slider/10.jpg" alt="#">
+							</div>
+							<div class="slider-bg__slide swiper-slide">
+								<img src="img/slider/11.jpg" alt="#">
+							</div>
+							<div class="slider-bg__slide swiper-slide">
+								<img src="img/slider/12.jpg" alt="#">
+							</div>
+							<div class="slider-bg__slide swiper-slide">
+								<img src="img/slider/13.jpg" alt="#">
+							</div>
+							<div class="slider-bg__slide swiper-slide">
+								<img src="img/slider/14.jpg" alt="#">
+							</div>
+							<div class="slider-bg__slide swiper-slide">
+								<img src="img/slider/15.jpg" alt="#">
+							</div>
+							<div class="slider-bg__slide swiper-slide">
+								<img src="img/slider/16.jpg" alt="#">
+							</div> -->
+						</div>
+						<!-- Якщо потрібна пагінація -->
+						<div class="slider-bg-pagination swiper-pagination"></div>
+						<!-- Якщо потрібна навігація (ліворуч/праворуч) -->
+
+
+					</div>
+
+					<div class="slider-bg-navigacions">
+						<div type="button" class="slider-bg-prev swiper-button-prev"></div>
+						<div type="button" class="slider-bg-next swiper-button-next"></div>
+					</div>
+
+
+
+
+				</div>
+			</section>
+			<section class="page__action action">
+				<div class="action__container">
+					<h2 data-watch class="action__title">Акции и скидки:</h2>
+					<div data-prlx-parent class="action__body">
+						<div class="action__column">
+							<div class="action__items">
+								<div class="action__subtitle">При заказе с сайта <span>получите скидку 5% </span>на новые сетки!
+								</div>
+								<div class="action__text"><strong>Оставьте заявку ниже,</strong> чтобы забронировать скидку
+								</div>
+								<a href="#" data-popup="#popup-action" class="action__button types__button">ПОЛУЧИТЬ СКИДКУ</a>
+							</div>
+							<img data-prlx data-coefficient="600" data-direction="1" class="action__img" data-src="img/action/01.png" alt="#">
+						</div>
+						<div class="action__column">
+							<div class="action__items">
+								<div class="action__subtitle"><span>Получите скидку</span> при заказе от 3-х изделий</div>
+								<div class="action__text"><strong>Оставьте заявку ниже,</strong> чтобы забронировать скидку
+								</div>
+								<a href="#" data-popup="#popup-action-two" class="action__button types__button">ПОЛУЧИТЬ
+									СКИДКУ</a>
+							</div>
+							<img data-prlx data-coefficient="600" data-direction="-1" class="action__img" data-src="img/action/02.png" alt="#">
+						</div>
+					</div>
+				</div>
+			</section>
+			<section class="page__form-map form-map">
+				<div class="form-map__container">
+					<div class="form-map__form form__form-body body-form">
+						<h3 data-watch class="body-form__title">Оставьте заявку на
+							<strong>бесплатный выезд мастера</strong>
+						</h3>
+						<div data-watch class="body-form__subtitle">Напишите нам в удобный для вас мессенджер</div>
+						<a href="#" class="body-form__whatsapp">Написать в WhatsApp</a>
+						<a href="#" class="body-form__telegram">Написать в Telegram</a>
+						<div class="body-form__text">Или оставьте заявку на звонок</div>
+						<form class="body-form__form" action="files/sendmail/sendmail.php" method="POST">
+							<div class="input-group">
+								<input required="" type="text" name="text" autocomplete="off" class="input-body ">
+								<label class="user-label">Введите ваш телефон</label>
+							</div>
+							<button type="submit" class="body-form__button button types__button">ЗАКАЗАТЬ БЕСПЛАТНЫЙ ВЫЕЗД
+								МАСТЕРА</button>
+							<div class="body-form__checkbox checkbox">
+								<input data-required id="c_4" data-error="Ознакомтесь с условием передачи информации" class="body-form__checkbox-input  checkbox__input" type="checkbox" value="1" name="form[checkbox]">
+								<label for="c_4" class="body-form__checkbox-label checkbox__label"><span class="body-form__checkbox-text checkbox__text">Я принимаю <a href="#">условия передачи
+											информации</a></span></label>
+							</div>
+						</form>
+					</div>
+					<div class="form-map__map map">
+						<script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A026d4d5c2bc589c9e3b19d1a342af96cf63d228eca6a32ddd8cc19ae68871adb&amp;width=100%25&amp;height=600&amp;lang=ru_RU&amp;scroll=true&_v=20240919013244"></script>
+						<div class="map__items">
+							<h2 class="map__addres-title">Адрес:</h2>
+							<div class="map__addres">Санкт-Петербург, Уральская улица, 12, к 5Д</div>
+							<h3 class="map__phone-title">Телефон:</h3>
+							<a class="map__phone" href="tel:+78124674065">+7 (812) 467-40-65</a>
+							<h4 class="map__mail-title">Почта:</h4>
+							<a class="map__mail" href="mailto:info@reh-service.ru">info@reh-service.ru</a>
+
+						</div>
+					</div>
+				</div>
+			</section>
+		</main>
+
+		<footer class="footer">
+			<div class="footer__container">
+				<div class="footer__public">
+					<p>«Сетки-Питер» © 2003-2024 г. Все права защищены
+						Информация на сайте не является публичной офертой</p>
+				</div>
+				<a data-popup="#popup-policy" href="#" class="footer__policy">Политика конфиденциальности</a>
+				<a data-popup="#popup-lawyer" href="#" class="footer__lawyer">Юридические данные</a>
+				<div class="footer__icon">
+					<img src="img/footer/01.svg" alt="#">
+					<img src="img/footer/instagram.svg" alt="#">
+					<img src="img/footer/vk.svg" alt="#">
+				</div>
+			</div>
+		</footer>
+	</div>
+
+	<script src="js/app.min.js?_v=20240919013244"></script>
+	<!-- <script src="https://cdn.jsdelivr.net/npm/intl-tel-input@24.4.0/build/js/intlTelInput.min.js?_v=20240919013244"></script>
+<script>
+  const input = document.querySelector("#phone");
+window.intlTelInput(input, {
+	initialCountry: "auto",
+	geoIpLookup: callback => {
+	  fetch("https://ipapi.co/json")
+		.then(res => res.json())
+		.then(data => callback(data.country_code))
+		.catch(() => callback("us"));
+	},
+  utilsScript: "https://cdn.jsdelivr.net/npm/intl-tel-input@24.4.0/build/js/utils.js",
+});
+const inputtwo = document.querySelector("#phone-two");
+window.intlTelInput(inputtwo, {
+	initialCountry: "auto",
+	geoIpLookup: callback => {
+	  fetch("https://ipapi.co/json")
+		.then(res => res.json())
+		.then(data => callback(data.country_code))
+		.catch(() => callback("us"));
+	},
+  utilsScript: "https://cdn.jsdelivr.net/npm/intl-tel-input@24.4.0/build/js/utils.js",
+});
+
+const inputcalc = document.querySelector("#phone-calc");
+window.intlTelInput(inputcalc, {
+	initialCountry: "auto",
+	geoIpLookup: callback => {
+	  fetch("https://ipapi.co/json")
+		.then(res => res.json())
+		.then(data => callback(data.country_code))
+		.catch(() => callback("us"));
+	},
+  utilsScript: "https://cdn.jsdelivr.net/npm/intl-tel-input@24.4.0/build/js/utils.js",
+});
+
+</script> -->
+</body>
+
+</html>
